@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
   get 'landings/index'
 
-  resources :restaurants
+  resources :restaurants do 
+    resources :reviews do 
+      resources :comments 
+    end 
+  end 
 
-  resources :reviews
+get 'restaurants/:r_id/reviews/:rev_id/comments/:comm_id/sub_comment/subcom_id'
 
+get 'sub_comment/'
+  
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

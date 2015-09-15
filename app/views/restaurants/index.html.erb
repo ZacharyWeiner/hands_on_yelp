@@ -15,6 +15,7 @@
     </tr>
   </thead>
   <tbody>
+  <% @restaurants = Restaruant.all %>
     <% @restaurants.each do |restaurant| %>
       <tr>
         <td><%= restaurant.id %></td>
@@ -40,3 +41,6 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_restaurant_path,
             :class => 'btn btn-primary' %>
+
+
+<%= render('/elements/rest_widget')%>
