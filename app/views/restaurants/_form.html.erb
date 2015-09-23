@@ -1,4 +1,4 @@
-<%= form_for @restaurant, :html => { :class => 'form-horizontal form-model' } do |f| %>
+<%= form_for @restaurant do |f| %>
   <div class="form-group">
     <%= f.label :name, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
@@ -21,6 +21,13 @@
     <%= f.label :website, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
       <%= f.text_field :website, :class => 'text-field form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.file_field :image, :class => 'form-control' %>
     </div>
   </div>
 

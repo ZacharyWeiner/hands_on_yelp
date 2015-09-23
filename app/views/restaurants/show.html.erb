@@ -13,6 +13,8 @@
       <dd><pre class="prettyprint"><%= @restaurant.phone %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:website) %></dt>
       <dd><pre class="prettyprint"><%= @restaurant.website %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:image) %></dt>
+      <dd><pre class="prettyprint"><%= image_tag(@restaurant.image) %></pre></dd>
   </dl>
 </div>
 
